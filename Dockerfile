@@ -1,5 +1,6 @@
 FROM wordpress:php7.1-fpm-alpine
-MAINTAINER Antergos Developers
+FROM nginx:alpine
+MAINTAINER Antergos Developers <dev@antergos.com>
 
 RUN apk --no-cache add curl git openssh bash
 RUN adduser -D ubuntu
@@ -23,18 +24,3 @@ RUN curl -L https://getcomposer.org/installer -o composer-setup.php \
 	&& rm  composer-setup.php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/composer
-
-##
-# Rename docker-entrypoint.sh so it doesn't get overwritten in next step.
-##
-RUN mv /usr/local/bin/docker-entrypoint.sh /usr/local/bin/docker-entrypoint-wp.sh
-
-FROM nginx:alpine
-
-##
-# Rename docker-entrypoint.sh so we can call it from our own entrypoint script.
-##
-RUN mv /usr/local/bin/docker-entrypoint.sh /usr/local/bin/docker-entrypoint-nginx.sh
-
-ADD docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh \
-	&& chmod +x /usr/local/bin/docker-entrypoint.sh
