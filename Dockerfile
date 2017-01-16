@@ -1,5 +1,4 @@
 FROM wordpress:php7.1-fpm-alpine
-FROM nginx:alpine
 MAINTAINER Antergos Developers <dev@antergos.com>
 
 RUN apk --no-cache add curl git openssh bash
