@@ -2,12 +2,11 @@ FROM wordpress:php7.1-fpm-alpine
 MAINTAINER Antergos Developers <dev@antergos.com>
 
 RUN apk --no-cache add curl git openssh bash
-RUN adduser -D ubuntu
 
 ##
 # Make sure db container has time to startup
 ##
-RUN sed -i 's|#!/bin/bash|&\nsleep 15|g' /usr/local/bin/docker-entrypoint.sh
+RUN sed -i 's|#!/bin/bash|&\nsleep 10|g' /usr/local/bin/docker-entrypoint.sh
 
 ##
 # Install wp-cli
