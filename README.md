@@ -3,7 +3,8 @@ Lightweight WordPress Docker Image
 
 ## Supported tags and respective `Dockerfile` links
 
--	[`php7-nginx-alpine`, `latest` (*Dockerfile*)](https://github.com/antergos/docker-wordpress/blob/master/Dockerfile)
+-	[`php7.1-fpm-alpine` (*Dockerfile*)](https://github.com/antergos/docker-wordpress/blob/php7.1-fpm-alpine/Dockerfile)
+-	[`nginx-alpine` (*Dockerfile*)](https://github.com/antergos/docker-wordpress/blob/nginx-alpine/Dockerfile)
 
 ![logo](https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/wordpress/logo.png)
 
